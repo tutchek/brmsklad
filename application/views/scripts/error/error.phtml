@@ -1,0 +1,19 @@
+<?php // application/views/scripts/error/error.phtml ?>
+
+<h2>Chyba</h2>
+<h3><?php echo $this->message ?></h3>
+
+<p>Omlouváme se, na nápravě se pracuje.</p>
+
+<?php if ('development' == $this->env): ?>
+    <h3>Exception information:</h3>
+    <p>
+        <b>Message:</b> <?php echo $this->exception->getMessage() ?>
+    </p>
+
+    <h3>Stack trace:</h3>
+    <pre><?php echo $this->exception->getTraceAsString() ?></pre>
+
+    <h3>Request Parameters:</h3>
+    <pre><?php var_dump($this->request->getParams()) ?></pre>
+<?php endif ?>

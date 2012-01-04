@@ -1,0 +1,5 @@
+<ul id="main-nav">
+<?php foreach ($this->container as $page) { ?>
+        <li <?php echo $page->isActive() ? ' id="nav-active"' : '' ?>><a href="<?php echo $page->getHref() ?>"><?php echo $page->getLabel() ?></a></li>
+    <?php } ?>
+</ul>

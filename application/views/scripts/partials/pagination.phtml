@@ -1,0 +1,34 @@
+<?php if ($this->pageCount) { ?>
+			<div class="pagination box"> 
+				<p class="f-left">Zobrazuji <strong><?php echo $this->firstItemNumber ?>&ndash;<?php echo $this->lastItemNumber ?></strong> z <strong><?php echo $this->totalItemCount ?></strong> položek</p> 
+
+                                <p class="f-right">
+					<?php if (isset($this->previous)){ ?>
+					<a href="<?php echo $this->url(array('page' => $this->previous)); ?>?<?php echo $_SERVER['QUERY_STRING'] ?>">&laquo;</a>
+						<?php if (!array_key_exists($this->first, $this->pagesInRange)) { ?>
+						<a href="<?php echo  $this->url(array('page' => $this->first)); ?>?<?php echo $_SERVER['QUERY_STRING'] ?>"><?php echo $this->first ?></a>
+						<span>&hellip;</span>
+						<?php } ?>
+					<?php } else { ?>
+					<span>&laquo;</span>
+					<?php } ?>
+					
+					
+					<?php foreach ($this->pagesInRange as $page) { ?>
+					    <a href="<?php echo  $this->url(array('page' => $page)); ?>?<?php echo $_SERVER['QUERY_STRING'] ?>"<?php echo ($page == $this->current) ? ' class="pagination-active"' : '' ?>><?php echo $page ?></a> <!-- Active -->
+					<?php }; ?>
+					
+					<?php if (isset($this->next)){ ?>
+					<?php if (!array_key_exists($this->last, $this->pagesInRange)) { ?>
+						<span>&hellip;</span>
+						<a href="<?php echo  $this->url(array('page' => $this->last)); ?>?<?php echo $_SERVER['QUERY_STRING'] ?>"><?php echo $this->last ?></a>
+					<?php } ?>
+					
+					<a href="<?php echo $this->url(array('page' => $this->next)); ?>?<?php echo $_SERVER['QUERY_STRING'] ?>">&raquo;</a>
+					<?php } else { ?>
+					  <span class="disabled">&raquo;</span>
+					<?php }; ?>
+				</p> 
+ 
+			</div> 
+<?php } ?>

@@ -1,0 +1,18 @@
+<h2>Skladová místa</h2>
+
+<table>
+
+<tr>
+    <th>ID</th>
+    <th>Název</th>
+    <th>Popis</th>
+</tr>
+   
+<?php foreach ($this->mista as $misto) { ?>
+<tr>
+    <td><?php echo $misto->id ?></td>
+    <td><?php echo $misto->nazev ?></td>
+    <td><?php echo $misto->popis ?></td>
+</tr>
+<?php } ?>
+</table>

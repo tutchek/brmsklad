@@ -1,0 +1,101 @@
+<<?php ?>?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <!-- This website template was downloaded from http://www.nuviotemplates.com - visit us for more templates -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en" />
+    <meta name="robots" content="all,follow" />
+
+    <meta name="author" lang="en" content="All: Your website name [www.your-website.com]; e-mail: info@your-website.com" />
+    <meta name="copyright" lang="en" content="webdesign: Vit Dlouhy [Nuvio - www.nuvio.cz; NuvioTemplates - www.nuviotemplates.com]; e-mail: hello@nuviotemplates.com" />
+
+    <meta name="description" content="..." />
+    <meta name="keywords" content="..." />
+    
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="/css/main.css" />
+    <!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="/css/main-msie.css" /><![endif]-->
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="/css/scheme.css" />
+    <link rel="stylesheet" media="print" type="text/css" href="/css/print.css" />
+
+    <?php echo $this->headTitle("BrmSklad")->setSeparator(' » ') ?>
+    <?php echo $this->headLink(); ?>
+    <?php echo $this->headStyle(); ?>
+    <?php echo $this->headScript(); ?>
+</head>
+
+<body>
+
+<div id="main">
+
+    <!-- Header -->
+    <div id="header" class="box">
+
+        <!-- Your logo -->
+        <h1 id="logo"><a href="/" title="[Go to homepage]">BrmSklad</a></h1>
+        
+        <!-- Your slogan -->
+        <p id="slogan">Brmlab evidenční divize</p>
+
+        <hr class="noscreen" />
+
+        <!-- Hidden navigation -->
+        <p class="noscreen noprint"><em>Quick links: <a href="#content">content</a>, <a href="#nav">navigation</a>, <a href="#search">search</a>.</em></p>
+
+        <hr class="noscreen" />
+        
+    </div> <!-- /header -->
+
+    <hr class="noscreen" />
+
+    <!-- Navigation -->
+    <div class="nav box">
+    
+        <h3 class="noscreen">Navigation</h3>        
+
+	<?php
+	   echo $this->navigation()
+	      ->menu()
+	      ->setMaxDepth(1)
+	      ->setPartial('partials/mainMenu.phtml');
+	   ?>
+    </div>
+	
+	<div class="nav box">
+	   <?php
+	    echo $this
+	       ->navigation()
+	       ->menu()
+	       ->setPartial('partials/subMenu.phtml');
+	    ?>
+    </div> <!-- /nav -->
+    
+    <hr class="noscreen" />
+
+    <!-- Main content -->
+    <div id="content" class="box">
+	<?php 
+	echo $this->getMessages();
+	?>  
+
+	 <?php echo $this->layout()->content ?>
+
+    </div> <!-- /content -->
+
+    <hr class="noscreen" />
+        
+    <!-- Footer -->
+    <div id="footer">
+
+        <!-- Do you want remove this backlinks? Look at www.nuviotemplates.com/payment.php -->            
+        <p class="f-right"><a href="http://www.nuviotemplates.com/">Free web templates</a> presented by <a href="http://www.qartin.cz/">QARTIN</a>, vacation <a href="http://www.puntacana.net/">Punta Cana</a></p>
+        <!-- Do you want remove this backlinks? Look at www.nuviotemplates.com/payment.php -->
+        
+        <p>&copy;&nbsp;2011 <a href="http://www.brmlab.cz/">Brmlab, o.s.</a></p>
+
+    </div> <!-- /footer -->
+
+</div> <!-- /main -->
+
+</body>
+</html>

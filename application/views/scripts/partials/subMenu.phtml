@@ -1,0 +1,9 @@
+<?php foreach ($this->container as $superpage) { ?>
+<?php if (!$superpage->isActive(true)) { continue; } ?>
+
+<ul id="sub-nav">
+    <?php foreach ($superpage as $page) { ?>
+        <li <?php echo $page->isActive() ? ' id="subnav-active"' : '' ?>><a href="<?php echo $page->getHref() ?>"><?php echo $page->getLabel() ?></a></li>
+    <?php } ?>
+</ul>
+<?php } ?>
